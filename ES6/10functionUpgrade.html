@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수의 default 파라미터
+            // 파라미터를 넣지 않았을때만 발동 // 수학 연산자도 가능 (a, b = 2 * a)
+            // 함수도 가능 (a, b = 함수())
+
+        function 임시함수() {
+            return 10;
+        }
+
+        function 더하기(a, b = 임시함수()) {
+            console.log(a + b);
+        }
+        더하기(1);
+        
+        
+        // argument -> 옛날 문법
+        // 모든 파라미터를 한번에 싸잡아 다루고 싶을 경우 arguments를 사용하세요
+        function 함수(a,b,c) {
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+        }
+        함수(1,2,3);
+
+        function 함수1(a,b,c) {
+            for (var i = 0; i < arguments.length; i ++) {
+                console.log(arguments[i]);
+            }
+        }
+        함수1(2,3,4)
+        
+
+        // 임시파라미터를 추가하고 싶다.
+        // Rest 파라미터
+        // ... -> spread operator , rest parmeter
+        // 모든 파라미터를 Array로 싸맬게여~
+        function 함수2(a,b,...작명) {
+            console.log(작명);
+            }
+        함수2(1,2,3,4,5,6,7);
+
+        // arguments는 모든 파라미터를 다 담지만 rest파라미터는 특정 파라미터를 골라 담을 수 있다.
+        // 함수에 파라미터자리에 ... 이면 rest고 나머지 자리에 ...은 spread 이다!
+
+        // 모든 파라미터들을 하나씩 콘솔창에 출력해주는 함수
+        function 함수3(...rest) {
+            for (var i = 0; i < rest.length; i++) {
+                console.log(rest[i])
+            }
+            console.log(rest[0]);
+            console.log(rest[1]);
+            console.log(rest[2]);
+            console.log(rest[3]);
+        }
+        함수3(1,2,3,4)
+
+        // rest 주의점 
+        // (...rest,a) 안된다. rest는 마지막에 써야한다!
+        // 두번이상 금지!!!
+
+    </script>
+    
+</body>
+</html>

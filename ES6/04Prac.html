@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="버튼">버튼</button>
+    <script>
+ // 1. 사람이라는 오브젝트가 있다. 이 오브젝트에 sayHI()라는 함수를 추가하고 싶다.
+ // 콘솔창에 안녕 나는 손흥민이라는 글자가 나와야 한다.
+ // sayHi()라는 함수를 어디서 어떻게 만들까
+        let person = {
+            name: '손흥민',
+            sayHi : function() {
+                console.log('안녕 나는 ' + this.name);
+            }
+        }
+
+        person.sayHi();
+
+
+// 2. 오브젝트가 있는데 전부더하는 함수를 만들어 사용하고 싶다.
+// 조건 자료라는 object 중괄호 내에 코드 작성 금지
+        let data = {
+            data: [1,2,3,4,5],
+            }
+        
+
+        data.allSum = function() {
+            let sum = 0;
+            this.data.forEach(function(a) {
+                sum = sum + a;
+            });
+            console.log(sum);
+        }
+        data.allSum();
+
+//3. 버튼을 클릭하면 지금 누른 버튼에 담긴 글자를 출력하는 기능을 만들고 시팓.
+// setTimeout을 이용해 1초 후에 this.innerHTML을 콘솔창에 출력하고 싶으면 어떻게 할까
+        setTimeout(function() {console.log('안녕')}, 1000);
+
+        // function func() {
+        //     console.log('안녕');
+        // }
+
+        // setTimeout(func,1000)
+
+
+            document.getElementById('버튼').addEventListener('click', function(){
+               setTimeout(() => {console.log(this.innerHTML)}, 1000) ;
+            });
+
+
+            // this는 function에 의해 배번 바뀜 (근본없는 일반함수에서는 window를 바라본다.)
+    </script>
+    
+</body>
+</html>

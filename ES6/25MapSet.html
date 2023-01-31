@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Map 자료형 
+        // key value를 저장하는 자료형
+
+        let person = new Map(); // Map 자료형 생성
+        person.set('name', 'kim'); // 자료 저장
+        person.set('age', 20);
+
+        // 뭔가 자료간의 연관성을 표현하기 위해서 사용한다. 
+        // Object에 key는 글자만 됐는데 Map 자료형은 글자 외에도 전부 가능.
+
+        person.get('age') // 자료 출력 / delete 삭제 / size 개수
+
+        for (let key of person.keys()) {
+            console.log(key)
+        }
+
+
+
+        // Set 자료형
+        // 중복자료를 허용하지 않는 자료형 
+
+        let 출석부 = ['john','tom','andy','tom']; // tom 중복자료 실수했음.
+
+        let 출석부2 = new Set(['john','tom','andy','tom']); // 출력하면 중복 안나옴!
+
+        출석부2.add('sally'); // 자료추가 / delete 제거 / size 자료개수
+
+        
+
+        // Set <-> array
+
+        let 출 = ['john','tom','andy','tom'];
+
+        let 출2 = new Set(출); // array 를 set으로 
+
+        출 = [...출2] // set -> array 이러면 출에 있던 중복자료들이 자동으로 제거가 된다.
+
+ 
+    </script>
+    
+</body>
+</html>

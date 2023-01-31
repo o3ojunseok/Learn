@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // extends
+
+      class 할아버지 {
+        constructor(name, firstName) {
+          this.성 = firstName;
+          this.이름 = name;
+        }
+        sayHi() {
+            console.log('안녕');
+        }
+      }
+
+      let 할아버지1 = new 할아버지("zzz", "kim");
+
+      class 아버지 extends 할아버지 {
+        constructor(name, firstName) {
+          super(name, firstName); // 할아버지 constructor를 그냥 갖다 쓰는거
+          this.나이 = 50;
+        }
+        sayHi() {
+            console.log('ㅎㅇ')
+            super.sayHi(); // 내 부모의 constructor 써주세욤 부모.prototype.sayHi();
+        }
+        // 나와 조금 더 가까이 있는 프로토타입을 출력!
+      }
+
+      // let 아버지1 = new 아버지(); 에러? extends 만든 class 는 this그냥 못쓴다 super(); 라는 함수를 써줘!
+      let 아버지1 = new 아버지("ff", "kim");
+      아버지1.sayHi();
+
+      
+    </script>
+  </body>
+</html>

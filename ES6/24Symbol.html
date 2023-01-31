@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //심볼의 용도 
+        // Object 자료형의 비밀스런 key 값
+        // 오브젝트 안에 주석을 단다고 생각하자
+
+        let 심볼 = Symbol('설명');
+
+
+        let age = Symbol('안알랴줌'); 
+        let high = Symbol('구라임');
+
+        let person = {
+            name : 'kim',
+            // [high] : 180, 도 가능
+        };
+
+        person.age = 30;
+        person[age] = 50; // 반복문에 출력이 안됨.
+
+        person.high = 190;
+        person[high] = 180;
+
+        for (let key in person){
+            console.log(person[key])
+        }
+    
+
+
+        // import 해온파일/ 라이브러리 쓸 때 거기 있던 object에 자료를 추가하거나 숨기고 싶으면 !
+
+
+        // 특징
+        // 설명이 같다고 해서 같은 Symbol이 아니다. 각각 Symbol을 만들때 마다 유니크한 Symbol이 생긴다.
+        // 전역 변수같은 전역 Symbol? -> Symbol.for('설명') 이렇게 만들면 된다.
+        // 기존 내장 Symbol들 
+
+
+        
+
+    </script>
+    
+</body>
+</html>

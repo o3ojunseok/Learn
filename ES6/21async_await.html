@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+
+        //연산이 끝나면 특정코드를 실행하고 싶음 - 콜백
+        // function 더하기(콜백) {
+        //     1 + 1;
+        //     콜백();
+        // }
+        // 더하기(함수);
+
+        //promise
+        // function 더하기() {
+        //     1 + 1;
+        // }
+
+        // 더하기().then(function() {
+
+        // })
+
+
+        // async - 이걸 function 앞에 붙이면 함수 실행 후에 promise 오브젝트가 남는다. 함수선언 앞에다만써!!! arrow도 가능
+        // 항상 성공만 가능 ㅠ 강제로 실패를 보내줄 수 는있다. 
+        // return Promise.reject('실패임')
+        async function 더하기() {
+        //    return 1 + 1; // return 쓰면 결과를 출력할 수 있다.
+
+            let 프로미스 = new Promise(function(resolve, reject) {
+                let add = 1 + 1;
+                resolve(add);
+                // reject(100); await은 실패시 에러 띄어준다!!! 그냥 멈춤! 그래서 try catch써준다.
+            });
+
+            // 프로미스.then(function() {
+            //     console.log('성공')
+            // })
+            
+            // try { 이걸해보고 } catch { 안되면 이걸 실행해 } await이랑 자주 사용해요
+            try{
+            let result = await 프로미스;  // await - 프로미스가 해결될 때까지 기다려주세요....then 대신 사용이 가능!
+            // await async function 안에서 사용!!!!!
+            console.log(result);
+            } catch {
+                console.log('실패 ㅋ')
+            }
+        }
+
+        더하기();
+
+        // 더하기().then(function(result) {
+        //     console.log(result)
+        // })
+
+    </script>
+
+
+</body>
+</html>

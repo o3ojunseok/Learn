@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // 반복문은?
+        // Array, Object 에서 자료 꺼내 쓸때 사용
+        // 코드 여러번 실행할 때 사용
+
+        // 그냥 for 반복문
+        for (var i = 0; i < 3; i ++) {
+
+        }
+
+
+        // Array 전용
+        // [1,2,3].forEach();
+
+
+        class 부모 {
+
+        }
+        부모.prototype.name = "Park";
+        
+
+        var 오브젝트 = { name:'kim', age:30 };
+
+        // Object 전용 
+        // 안에 자료 개수만큼 돈다.
+        // enumerable 한 것만 반복해준다. -> Object.getOwnPropertyDescriptor(오브젝트, 'name') 숨겨진 정보 출력
+        // 일반자료들은 항상 enumerable이 true 기본값!
+        // 부모의 prototype도 반복해준다.
+        for (var 작명 in 오브젝트) {
+            console.log(오브젝트);
+        }
+
+
+        // iterable 전용
+        // for of -> Array,문자,arguments, NodeList,Map,Set
+        // iterable한 자료형에만 사용이 가능하다.
+        
+
+        var 어레이 = [2,3,4,5];
+
+        for (var 작명 of 어레이) {
+            console.log(작명)
+        }
+
+        어레이[Symbol.iterator](); // 이게 있으면 iterable한 자료형임!
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      // ES5
+      var 부모 = {name : 'Kim', age : 50}; //얘 부모는 Object new Object~
+
+      var 자식 = Object.create(부모);
+
+      자식.age = 20;
+
+      var 손자 = Object.create(자식);
+      손자.age = 10;
+      // 콘솔에 자식은 나오지 않는데 자식.name은 나온다 왜?
+      // 자식은 prototype을 부모로 두고 있기 때문이다.
+
+
+      // ES6
+      class 부모1 {
+          constructor(a) {
+              this.name = a;
+
+              //함수를 추가하고 싶으면
+              this.sayHi = function() {
+                  console.log('함수 추가');
+              }
+            //   sayHello(){
+            //       console.log('함수 추가2');
+            //   } 부모1.prototype에 추가된다.
+          }
+      }
+
+      var 자식1 = new 부모1('OH');
+      자식1.__proto__
+      Object.getPrototypeOf(자식1);
+
+      // 왜쓰냐 object 여러개를 만들어 쓰려고할 때 쓴다.
+    </script>
+  </body>
+</html>

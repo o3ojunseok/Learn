@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <script></script>
+    <script type = "module">
+        // import a from '/library.js';
+        // console.log(a);
+
+        import {a,b} from './library.js';
+        import c from './library.js';
+        console.log(c);
+
+
+        // a,b,c 동시에 import
+        // import 작명,{a,b} from './library.js' 작명 왼쪽!
+
+        // 변수명이 마음에 안들면?
+        // import {변수 as 새로운변수명} from '경로'
+
+        // * 은 전부다 import 해오겠습니다.
+        // import * as 별명 from ~
+        // console.log(별명.a);
+        // 디폴트도 가저오렴
+        // impoert c,* as 별명 from ~
+
+        // 프론트엔드 개발에선 <script src=""> 씁시다.
+
+
+    </script>
+  </body>
+</html>

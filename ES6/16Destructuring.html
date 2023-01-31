@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [2, 3, 4];
+
+      // let a = arr[0];
+      // let b = arr[1];
+
+    //   let [a, b, c] = [2, 3, 4];
+
+      // array destructuring할 때 몇개 빼먹는다면?
+      let [a,b,c = 10] = [2,3];
+      // c는 빼먹엇는데 할당해줘서 c는 10이 된다. default
+      // 아예 안하면 undefined 
+
+
+      // object 데이터를 꺼내 변수에 담으려면? - 변수명을 key명과 똑같이 써야합니다!
+      let obj = {
+          name : 'kim',
+          age : 30,
+      }
+    //   let name = obj.name;
+    //   let age = obj.name;
+    // 이거 아래랑 같음
+    
+    // 이것도 default parameter 가능하다
+    // 변수명 변경 가능! { name : 나이 }
+      let { name,age } = {
+          name : 'kim',
+          age : 30,
+      }
+
+
+      // 반대로 변수들을 object에 넣고 싶으면?
+      let na = 'kim';
+      let ag = 30;
+
+    //   let obj1 = { na : na , ag : ag}
+
+    let obj1 = { na, ag } // key값이랑 변수 같은거!
+
+    
+    
+    // 함수 파라미터 만들 때도 destrucuring 문법 사용 가능!!
+    // 함수 파라미터 변수만들때에도 사용 가능!
+
+    let obj2 = { 이름 : 'kim' ,  나이 : 30 };
+
+    // function 함수(파라) {
+    //     console.log(파라)
+    // }
+
+    // 함수(obj2);
+
+    function 함수( {이름,나이}) {
+        console.log(이름);
+        console.log(나이);
+    }
+
+    함수( {이름 : "kim", 나이 : 30} );
+    </script>
+  </body>
+</html>
