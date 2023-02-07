@@ -2,7 +2,7 @@
 korean = int(input('국어 점수 : '))
 english = int(input('영어 점수 : '))
 math = int(input('수학 점수 : '))
-
+  
 totalScore = korean + english + math
 print(f'총점 : {totalScore}')
 avg = totalScore / 3
