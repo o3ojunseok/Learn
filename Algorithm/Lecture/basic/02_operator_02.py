@@ -7,6 +7,7 @@ totalScore = korean + english + math
 print(f'총점 : {totalScore}')
 avg = totalScore / 3
 print(f'평균 점수 : %.2f' % avg)
+print(f'평균 다른 방식 : {avg: .2f}')
 
 maxScore = korean
 maxSubject = '국어'
