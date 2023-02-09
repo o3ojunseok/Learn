@@ -15,21 +15,21 @@ carNum = int(input('차량 번호: '))
 print(today)
 
 if car == 1 and dust > 150:
-  if day & 2 == carNum & 2:
+  if day % 2 == carNum % 2:
     print(f'차량 2부제')
     print(f'차량 2부제로 금일 운행 불가')
   else:
     print(f'운행 가능')
   
 if car == 2 and dust > 150:
-  if day & 5 == carNum & 5:
+  if day % 5 == carNum % 5:
     print(f'차량 5부제')
     print(f'차량 5부제로 금일 운행 불가')
   else:
     print(f'운행 가능')
     
 if dust <= 150:
-    if day & 5 == carNum & 5:
+    if day % 5 == carNum % 5:
       print(f'차량 5부제')
       print(f'차량 5부제로 금일 운행 불가')
     else:
